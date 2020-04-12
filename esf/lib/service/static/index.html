@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="ESF v2.0">
+        <meta name="author" content="Vivid Solutions Inc.">
+        <title>Electronic Submission Framework</title>
+        <!-- Scripts and CSS -->
+        <!-- JQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <!-- Lato Font -->
+        <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+        <!-- Material Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Materialize CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <!-- Materialize -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <!-- Vue Dev -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <!-- Vue Prod -->
+        <!-- script src="https://cdn.jsdelivr.net/npm/vue"></script -->
+        <!-- smk util css -->
+        <link rel="stylesheet" href="resources/css/esf.css" type='text/css'>
+    </head>
+    <body>
+        <div id="content">
+            <header>
+                <div>
+                    <nav>
+                        <div class="nav-wrapper bcgov-header">
+                            <a href="index.html" class="brand-logo">Electronic Submission Framework</a>
+                            <a href="#" data-target="slide-out" class="sidenav-trigger">
+                                <i class="material-icons">menu</i>
+                            </a>
+                            <ul class="right hide-on-med-and-down">
+                                <li><a href="">idir\user</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <ul id="slide-out" class="sidenav sidenav-fixed bcgov-content">
+                        <li>
+                            <div class="user-view">
+                                <div class="background bcgov-header"><img src="resources/images/bc_gov_logo_transparent.png" style="padding-left: 30px;"/></div>
+                            </div>
+                        </li>
+                        <li><a class="subheader white-text">Admin</a></li>
+                        <li><a href="#" v-on:click="tabSwitch('view-agents')" class="waves-effect white-text"><i class="material-icons white-text">settings</i>Agents</a></li>
+                        <li><a href="#" v-on:click="tabSwitch('create-agent')" class="waves-effect white-text"><i class="material-icons white-text">create_new_folder</i>Register Agent</a></li>
+                        <li><a class="subheader white-text">Reviewer</a></li>
+                        <li><a href="#" v-on:click="tabSwitch('view-submissions')" class="waves-effect white-text"><i class="material-icons white-text">search</i>View Submissions</a></li>
+                        <li><a class="subheader white-text">Submitter</a></li>
+                        <li><a href="#" v-on:click="tabSwitch('create-submission')" class="waves-effect white-text"><i class="material-icons white-text">send</i>Create Submission</a></li>
+                    </ul>
+                </div>
+            </header>
+            <main class="main-container">
+                <div id="titlePanel" class="title-panel">
+                    <p class="label"> Welcome to the Electronic Submission Framework</p>
+                    <p class="label"> blah blah blah</p>
+                    <p class="label"> blah blah</p>
+                    <p class="label"> blah blah blah blah blah</p>
+                </div>
+                <div id="contentPanel" class="content-panel" style="display: none;">
+                    <div id="contentCard" class="card-content black-text">
+                        <component v-bind:is="currentTabComponent"
+                                    v-bind:agent="agent"
+                                    v-bind:agents="agents"
+                                    v-bind:submission="submission"
+                                    v-bind:submissions="submissions"
+                                    v-bind:search="search"
+                                    v-bind:key="componentKey"></component>
+                    </div>
+                </div>
+            </main>
+            <footer>
+                <footer-component></footer-component>
+            </footer>
+        </div>
+        <!-- templates, init, util scripts -->
+        <script src="resources/js/footer-component.js"></script>
+        <script src="resources/js/default-templates.js"></script>
+        <script src="resources/js/create-agent.js"></script>
+        <script src="resources/js/view-agents.js"></script>
+        <script src="resources/js/create-submission.js"></script>
+        <script src="resources/js/view-submissions.js"></script>
+        <script src="resources/js/view-submission.js"></script>
+        <script src="resources/js/esf-init.js"></script>
+        <script src="resources/js/esf-submission-io.js"></script>
+        <script src="resources/js/esf-agent-io.js"></script>
+    </body>
+</html>

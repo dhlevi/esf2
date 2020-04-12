@@ -1,0 +1,39 @@
+{
+  "preferGlobal": false,
+  "name": "esf",
+  "version": "2.0.0",
+  "description": "Electronic Submission Framework 2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Dylan Hemsworth",
+  "license": "(MIT OR Apache-2.0)",
+  "bin": {
+    "smk": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dhlevi/esf2.git"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^3.22.0",
+    "inquirer": "^7.0.0",
+    "libxmljs": "^0.19.7",
+    "lodash": "^4.17.15",
+    "minio": "^7.0.15",
+    "mongodb": "^3.3.3",
+    "mongoosastic": "^4.6.0",
+    "mongoose": "^5.7.7",
+    "morgan": "^1.9.1",
+    "request": "^2.88.2",
+    "request-promise-native": "^1.0.8",
+    "uuid": "^7.0.3",
+    "winston": "^3.2.1",
+    "xml2js": "^0.4.22",
+    "xmldom": "^0.1.27"
+  }
+}
